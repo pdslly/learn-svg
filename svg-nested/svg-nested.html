@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            text-align: center;
+            line-height: 60px;
+            background: darkorange;
+            color: blue;
+            font-size: 30px;
+        }
+        .txt{
+            width: 600px;
+            text-indent: 1em;
+            text-align: left;
+            word-break: break-all;
+        }
+        pre{
+            background: bisque;
+            line-height: 2;
+            text-align: left;
+            white-space: pre-line;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">SVG嵌套使用</header>
+<center>
+    <h1>嵌套SVG元素</h1>
+
+    <div class="txt">SVG元素可以相互嵌套，就像下面这样：</div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
+        &nbsp;&lt;svg&gt;&lt;/svg&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <div class="txt">
+        嵌套SVG元素可用于将SVG图形分组在一起，并将它们作为集合进行定位。嵌套在svg元素内的所有形状的(x,y)坐标将相对于其外层svg元素的(x,y)坐标进行定位。通过移动外层的svg元素，你也可以移动所有嵌套的形状。
+    </div>
+
+    <div class="txt">
+        下面是一个将两个矩形嵌套在两个svg元素的例子。两个矩形除了颜色不同之外，x,y坐标、高度和宽度都一样。外层的svg元素有不同的x值。由于矩形的x位置相对于其外层的svg元素的x位置，所以两个矩形在不同的x坐标。
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
+            &nbsp;&lt;svg x="0"&gt;
+            &nbsp;&nbsp;&lt;rect x="10" y="10" height="100" stroke-width="10" width="100" style="stroke:#ff0000; fill: #0000ff"/&gt;
+            &nbsp;&lt;/svg&gt;
+            &nbsp;&lt;svg x="200"&gt;
+            &nbsp;&nbsp;&lt;rect x="10" y="10" height="100" stroke-width="10" width="100" style="stroke:#009900; fill: #00cc00"/&gt;
+            &nbsp;&lt;/svg&gt;
+        &lt;/svg&gt;
+    </pre>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink" width="320px" viewBox="0 0 320 120">
+        <svg x="0">
+            <rect x="10" y="10" height="100" stroke-width="10" width="100"
+                  style="stroke:#ff0000; fill: #0000ff"/>
+        </svg>
+        <svg x="200">
+            <rect x="10" y="10" height="100" stroke-width="10" width="100"
+                  style="stroke:#009900; fill: #00cc00"/>
+        </svg>
+    </svg>
+</center>
+</body>
+</html>

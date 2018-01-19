@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,iframe,pre{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            text-align: center;
+            line-height: 60px;
+            background: darkorange;
+            color: blue;
+            font-size: 30px;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+        }
+        pre{
+            background: bisque;
+            white-space: pre-line;
+            line-height: 2;
+            font-size: 20px;
+            text-align: left;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">在Web浏览器中显示SVG</header>
+    <center>
+        <h2>使用<mark>IFRAME</mark>元素</h2>
+        <pre>
+            &lt;iframe class="box" src="./circle.svg" frameborder="0"&gt;&lt;/iframe&gt;
+        </pre>
+        <iframe class="box" src="./circle.svg" frameborder="0"></iframe>
+        <h2>使用<mark>IMG</mark>元素</h2>
+        <pre>
+            &lt;img class="box" src="./circle.svg"&gt;
+        </pre>
+        <img class="box" src="./circle.svg">
+        <h2>使用<mark>BACKGROUND</mark></h2>
+        <pre>
+            &lt;div class="box" style="background: url(circle.svg)"&gt;&lt;/div&gt;
+        </pre>
+        <div class="box" style="background: url(circle.svg)"></div>
+        <h2>使用<mark>svg</mark></h2>
+        <pre>
+            &lt;svg xmlns="http://www.w3.org/2000/svg" class="box" viewBox="0 0 300 300"&gt;
+            &nbsp;&lt;circle cx="150px" cy="150px" r="100"/&gt;
+            &lt;/svg&gt;
+        </pre>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="box" viewBox="0 0 300 300">
+            <circle cx="150px" cy="150px" r="100"/>
+        </svg>
+    </center>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            text-align: center;
+            line-height: 60px;
+            background: darkorange;
+            color: blue;
+            font-size: 30px;
+        }
+        .txt{
+            width: 600px;
+            text-indent: 1em;
+            text-align: left;
+            word-break: break-all;
+        }
+        pre{
+            background: bisque;
+            line-height: 2;
+            text-align: left;
+            white-space: pre-line;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">在Web应用程序中使用SVG图标</header>
+    <center>
+        <h1>SVG图标优点</h1>
+
+        <div class="txt">使用SVG图标的优点是，图标可以很容易地按比例放大和缩小，具体取决于你要显示在应用程序的位置，以及显示应用程序的屏幕大小。相较于位图图形，SVG图标在放大或缩小时图片的质量还是很好。位图图形在放大时会变为像素化，并且在缩小时会失真。
+            免费的SVG图标</div>
+
+        <div class="txt">在开始制作自己的SVG图标之前，你应该看看<a href="http://iconmonstr.com"><strong>http://iconmonstr.com</strong></a>。Iconmonstr.com上有越来越多的SVG图表集供你免费下载和使用。</div>
+
+        <h1>定义自己的SVG图标</h1>
+        <pre>
+            &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
+            &nbsp;&lt;symbol id="circle" viewBox="0 0 300 300"&gt;
+            &nbsp;&nbsp;&lt;circle cx="150px" cy="150px" y="100px" style="fill: #00ccff"/&gt;
+            &nbsp;&lt;/symbol&gt;
+            &lt;/svg&gt;
+        </pre>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none;">
+            <symbol id="circle" viewBox="0 0 300 300">
+                <circle cx="150" cy="150" r="150" style="fill: #00ccff;" />
+            </symbol>
+        </svg>
+        <h4>32px</h4>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             width="32px" height="32px">
+            <use xlink:href="#circle"></use>
+        </svg>
+        <h4>64px</h4>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             width="64px" height="64px">
+            <use xlink:href="#circle"></use>
+        </svg>
+        <h4>128px</h4>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             width="128px" height="128px">
+            <use xlink:href="#circle"></use>
+        </svg>
+    </center>
+</body>
+</html>
