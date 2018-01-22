@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            text-align: center;
+            line-height: 60px;
+            background: darkorange;
+            color: blue;
+            font-size: 30px;
+        }
+        .txt{
+            width: 600px;
+            text-indent: 1em;
+            text-align: left;
+            word-break: break-all;
+        }
+        pre{
+            background: bisque;
+            line-height: 2;
+            text-align: left;
+            white-space: pre-line;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">SVG ellipse元素使用</header>
+<center>
+    <h1>什么是ellipse元素</h1>
+
+    <div class="txt">
+        SVG <mark>ellipse</mark>元素可以用来绘制椭圆。椭圆其实就是有不同高度和宽度的圆，即其在x和y方向上的半径(<b>rx</b>,<b>ry</b>)不同
+    </div>
+
+    <h1>SVG ellipse示例</h1>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;ellipse cx="150" cy="150" rx="100" ry="50" style="fill: #006600;" /&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <ellipse cx="150" cy="150" rx="100" ry="50" style="fill: #006600;" />
+    </svg>
+
+    <h1>椭圆边框</h1>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;ellipse cx="150" cy="150" rx="100" ry="50" style="fill: #006600; stroke: red; stroke-width: 2;" /&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <ellipse cx="150" cy="150" rx="100" ry="50" style="fill: #006600; stroke: red; stroke-width: 2;" />
+    </svg>
+
+    <h1>椭圆填充</h1>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300px" height="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;ellipse cx="100" cy="100" rx="100" ry="80" style="fill: rgb(255, 100, 100);" &gt;
+            &nbsp;&lt;ellipse cx="200" cy="200" rx="100" ry="80" style="fill: rgb(100, 100, 255); fill-opacity: 0.5;" &gt;
+        &lt;/svg&gt;
+    </pre>
+    
+    <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         width="300px" height="300px" style="border: 1px dotted red;">
+        <ellipse cx="100" cy="100" rx="100" ry="80" style="fill: rgb(255, 100, 100);" />
+        <ellipse cx="200" cy="200" rx="100" ry="80" style="fill: rgb(100, 100, 255); fill-opacity: 0.5;" />
+    </svg>
+</center>
+</body>
+</html>
