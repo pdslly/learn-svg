@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            text-align: center;
+            line-height: 60px;
+            background: darkorange;
+            color: blue;
+            font-size: 30px;
+        }
+        .txt{
+            width: 600px;
+            text-indent: 1em;
+            text-align: left;
+            word-break: break-all;
+        }
+        pre{
+            background: bisque;
+            line-height: 2;
+            text-align: left;
+            white-space: pre-line;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">SVG polygon元素使用</header>
+<center>
+    <h1>什么是polygon元素</h1>
+
+    <div class="txt">
+        SVG <mark>polygon</mark>元素用于在SVG中绘制多边形（三边或者更多）
+    </div>
+
+    <h1>SVG polygon示例</h1>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;polygon points="10,10 290,10 150,290" style="stroke: red; stroke-width: 2; fill: #006600;"/&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <polygon points="10,10 290,10 150,290" style="stroke: red; stroke-width: 2; fill: #006600;"/>
+    </svg>
+
+    <div class="txt">
+        你可能注意到了，即使只列出了三个点，三边也都会被描边。
+        这是因为 polygon 元素是在所有点之间绘制线条，包括结束点到初始点之间。而 polyline 不会，这大概是 polyline 与 polygon 之间唯一的区别。
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;polygon points="10,10 290,10 290,290 150,150 10,290" style="stroke: red; stroke-width: 2; fill: #006600;"/&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <polygon points="10,10 290,10 290,290 150,150 10,290" style="stroke: red; stroke-width: 2; fill: #006600;"/>
+    </svg>
+</center>
+</body>
+</html>

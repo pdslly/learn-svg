@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            text-align: center;
+            line-height: 60px;
+            background: darkorange;
+            color: blue;
+            font-size: 30px;
+        }
+        .txt{
+            width: 600px;
+            text-indent: 1em;
+            text-align: left;
+            word-break: break-all;
+        }
+        pre{
+            background: bisque;
+            line-height: 2;
+            text-align: left;
+            white-space: pre-line;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">SVG line元素使用</header>
+<center>
+    <h1>什么是line元素</h1>
+
+    <div class="txt">
+        SVG <mark>line</mark>元素用于在SVG中绘制线条
+    </div>
+
+    <h1>SVG line示例</h1>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;line x1="0" y1="0" x2="300" y2="300" style="stroke: #006600;"/&gt;
+            &nbsp;&lt;line x1="0" y1="300" x2="300" y2="0" style="stroke: #006600;"/&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <line x1="0" y1="0" x2="300" y2="300" style="stroke: #006600;"/>
+        <line x1="0" y1="300" x2="300" y2="0" style="stroke: #006600;"/>
+    </svg>
+
+    <div class="txt">
+        初始点是属性设置的(x1, y1)，结束点是属性设置的(x2, y2)。
+    </div>
+</center>
+</body>
+</html>

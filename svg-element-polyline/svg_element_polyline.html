@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            text-align: center;
+            line-height: 60px;
+            background: darkorange;
+            color: blue;
+            font-size: 30px;
+        }
+        .txt{
+            width: 600px;
+            text-indent: 1em;
+            text-align: left;
+            word-break: break-all;
+        }
+        pre{
+            background: bisque;
+            line-height: 2;
+            text-align: left;
+            white-space: pre-line;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">SVG polyline元素使用</header>
+<center>
+    <h1>什么是polyline元素</h1>
+
+    <div class="txt">
+        SVG <mark>polyline</mark>元素用于在SVG中绘制多条连接线条
+    </div>
+
+    <h1>SVG polyline示例</h1>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;polyline points="10,10 290,10 150,290" style="stroke: red; stroke-width: 2; fill: #006600;"/&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <polyline points="10,10 290,10 150,290" style="stroke: red; stroke-width: 2; fill: #006600;"/>
+    </svg>
+
+    <div class="txt">
+        polyline的线条是由点来标识出来的，在属性points中，每个点都是以(x,y)的方式来排列。上边的例子有三个定义为三角形的点，三点之间用线连接，然后填充颜色。
+        你可能注意到上面的三角形只有两条边被描边，那是因为只有points列出的点之间的线才会被绘制，这里明显是少了一条线来回到起始点。因此可以像下面这样:
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;polyline points="10,10 290,10 150,290 <mark>10,10</mark>" style="stroke: red; stroke-width: 2; fill: #006600;"/&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <polyline points="10,10 290,10 150,290 10,10" style="stroke: red; stroke-width: 2; fill: #006600;"/>
+    </svg>
+</center>
+</body>
+</html>

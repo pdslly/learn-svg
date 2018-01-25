@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0d3e0c1-aa1a-483f-92ae-abd0ab6937ca" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/svg-element-circle/svg_element_circle.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/svg-element-ellipse/svg_element_ellipse.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/svg-element-rect/svg_element_rect.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/canvas.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svg-element-line/svg_element_line.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svg-element-polygon/svg_element_polygon.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/svg-element-polyline/svg_element_polyline.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,22 +18,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="svg_in_browser.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/svg-basic/svg_in_browser.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="16" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="svg_icon.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg-icon/svg_icon.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
+            <state relative-caret-position="840">
               <caret line="30" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="7" />
               <folding>
                 <element signature="e#1186#1190#0" expanded="true" />
@@ -59,7 +51,7 @@
       <file leaf-file-name="svg-nested.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg-nested/svg-nested.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1007">
+            <state relative-caret-position="1484">
               <caret line="53" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="7" />
               <folding>
                 <element signature="e#845#849#0" expanded="true" />
@@ -105,7 +97,7 @@
       <file leaf-file-name="svg_element_g.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg-element-g/svg_element_g.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
+            <state relative-caret-position="3220">
               <caret line="115" column="20" lean-forward="false" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
               <folding>
                 <element signature="e#979#983#0" expanded="true" />
@@ -225,7 +217,7 @@
       <file leaf-file-name="svg_element_rect.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg-element-rect/svg_element_rect.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
+            <state relative-caret-position="3304">
               <caret line="118" column="18" lean-forward="false" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
               <folding>
                 <element signature="e#969#973#0" expanded="true" />
@@ -335,7 +327,7 @@
       <file leaf-file-name="svg_element_circle.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg-element-circle/svg_element_circle.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="1820">
               <caret line="65" column="10" lean-forward="false" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
               <folding>
                 <element signature="e#986#990#0" expanded="true" />
@@ -364,11 +356,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="svg_element_ellipse.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="svg_element_ellipse.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svg-element-ellipse/svg_element_ellipse.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+              <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
               <folding>
                 <element signature="n#style#0;n#ellipse#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#1781#1787#0" expanded="true" />
@@ -381,10 +373,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="circle.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/svg-basic/circle.svg">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="svg_element_line.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/svg-element-line/svg_element_line.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="56" column="44" lean-forward="false" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
+              <folding>
+                <element signature="e#906#910#0" expanded="true" />
+                <element signature="e#1084#1088#0" expanded="true" />
+                <element signature="e#1101#1107#0" expanded="true" />
+                <element signature="e#1107#1111#0" expanded="true" />
+                <element signature="e#1173#1177#0" expanded="true" />
+                <element signature="e#1190#1196#0" expanded="true" />
+                <element signature="e#1196#1200#0" expanded="true" />
+                <element signature="e#1262#1266#0" expanded="true" />
+                <element signature="e#1275#1279#0" expanded="true" />
+                <element signature="e#1283#1287#0" expanded="true" />
+                <element signature="n#style#1;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#line#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#line#1;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1516850844422" expanded="false" signature="1351:1374" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="svg_element_polyline.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/svg-element-polyline/svg_element_polyline.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="60" column="65" lean-forward="false" selection-start-line="60" selection-start-column="65" selection-end-line="60" selection-end-column="65" />
+              <folding>
+                <element signature="e#1121#1127#0" expanded="true" />
+                <element signature="e#1127#1131#0" expanded="true" />
+                <element signature="e#1223#1227#0" expanded="true" />
+                <element signature="n#style#0;n#polyline#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#1979#1985#0" expanded="true" />
+                <element signature="e#1985#1989#0" expanded="true" />
+                <element signature="e#2100#2104#0" expanded="true" />
+                <element signature="n#style#0;n#polyline#0;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1516852093840" expanded="false" signature="1236:1240" ph="&lt;" />
+                <marker date="1516852093840" expanded="false" signature="1244:1248" ph="&gt;" />
+                <marker date="1516852093840" expanded="false" signature="1312:1335" ph="..." />
+                <marker date="1516852093840" expanded="false" signature="1416:1439" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="svg_element_polygon.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/svg-element-polygon/svg_element_polygon.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="canvas.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/canvas.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="67" column="92" lean-forward="true" selection-start-line="67" selection-start-column="92" selection-end-line="67" selection-end-column="92" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -423,6 +476,10 @@
         <option value="$PROJECT_DIR$/svg-element-rect/svg_element_rect.html" />
         <option value="$PROJECT_DIR$/svg-element-circle/svg_element_circle.html" />
         <option value="$PROJECT_DIR$/svg-element-ellipse/svg_element_ellipse.html" />
+        <option value="$PROJECT_DIR$/svg-element-line/svg_element_line.html" />
+        <option value="$PROJECT_DIR$/svg-element-polyline/svg_element_polyline.html" />
+        <option value="$PROJECT_DIR$/svg-element-polygon/svg_element_polygon.html" />
+        <option value="$PROJECT_DIR$/canvas.html" />
       </list>
     </option>
   </component>
@@ -432,10 +489,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="216" />
-    <option name="y" value="339" />
-    <option name="width" value="1712" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1374" />
+    <option name="y" value="93" />
+    <option name="width" value="1382" />
     <option name="height" value="784" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -471,23 +528,16 @@
     <panes>
       <pane id="ProjectPane">
         <subPane>
-          <expand>
-            <path>
-              <item name="learn-svg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learn-svg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learn-svg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learn-svg" type="462c0819:PsiDirectoryNode" />
-              <item name="svg-element-circle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learn-svg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learn-svg" type="462c0819:PsiDirectoryNode" />
-              <item name="svg-element-ellipse" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learn-svg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learn-svg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -503,6 +553,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\github\learn-svg" />
+      <recent name="E:\github\learn-svg\svg-element-ellipse" />
       <recent name="F:\NODE\learn-svg" />
     </key>
   </component>
@@ -517,6 +569,68 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -533,37 +647,38 @@
       <updated>1516379835493</updated>
       <workItem from="1516379837359" duration="8358000" />
       <workItem from="1516629544560" duration="4907000" />
+      <workItem from="1516849554666" duration="12852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13265000" />
+    <option name="totallyTimeSpent" value="26117000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1374" y="93" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3110119" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -573,6 +688,362 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/svg-basic/svg_in_browser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="16" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg-icon/svg_icon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="30" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="7" />
+          <folding>
+            <element signature="e#1186#1190#0" expanded="true" />
+            <element signature="e#1271#1275#0" expanded="true" />
+            <element signature="e#1288#1294#0" expanded="true" />
+            <element signature="e#1294#1298#0" expanded="true" />
+            <element signature="e#1338#1342#0" expanded="true" />
+            <element signature="e#1355#1361#0" expanded="true" />
+            <element signature="e#1361#1367#0" expanded="true" />
+            <element signature="e#1367#1371#0" expanded="true" />
+            <element signature="e#1432#1436#0" expanded="true" />
+            <element signature="e#1449#1455#0" expanded="true" />
+            <element signature="e#1455#1459#0" expanded="true" />
+            <element signature="e#1466#1470#0" expanded="true" />
+            <element signature="e#1483#1487#0" expanded="true" />
+            <element signature="e#1491#1495#0" expanded="true" />
+            <element signature="n#style#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#0;n#symbol#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg-nested/svg-nested.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1484">
+          <caret line="53" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="7" />
+          <folding>
+            <element signature="e#845#849#0" expanded="true" />
+            <element signature="e#930#934#0" expanded="true" />
+            <element signature="e#943#949#0" expanded="true" />
+            <element signature="e#949#953#0" expanded="true" />
+            <element signature="e#956#960#0" expanded="true" />
+            <element signature="e#960#964#0" expanded="true" />
+            <element signature="e#968#972#0" expanded="true" />
+            <element signature="e#981#985#0" expanded="true" />
+            <element signature="e#989#993#0" expanded="true" />
+            <element signature="e#1325#1329#0" expanded="true" />
+            <element signature="e#1410#1414#0" expanded="true" />
+            <element signature="e#1427#1433#0" expanded="true" />
+            <element signature="e#1433#1437#0" expanded="true" />
+            <element signature="e#1446#1450#0" expanded="true" />
+            <element signature="e#1463#1469#0" expanded="true" />
+            <element signature="e#1469#1475#0" expanded="true" />
+            <element signature="e#1475#1479#0" expanded="true" />
+            <element signature="e#1579#1583#0" expanded="true" />
+            <element signature="e#1596#1602#0" expanded="true" />
+            <element signature="e#1602#1606#0" expanded="true" />
+            <element signature="e#1610#1614#0" expanded="true" />
+            <element signature="e#1627#1633#0" expanded="true" />
+            <element signature="e#1633#1637#0" expanded="true" />
+            <element signature="e#1648#1652#0" expanded="true" />
+            <element signature="e#1665#1671#0" expanded="true" />
+            <element signature="e#1671#1677#0" expanded="true" />
+            <element signature="e#1677#1681#0" expanded="true" />
+            <element signature="e#1781#1785#0" expanded="true" />
+            <element signature="e#1798#1804#0" expanded="true" />
+            <element signature="e#1804#1808#0" expanded="true" />
+            <element signature="e#1812#1816#0" expanded="true" />
+            <element signature="e#1825#1829#0" expanded="true" />
+            <element signature="e#1833#1837#0" expanded="true" />
+            <element signature="n#style#0;n#rect#0;n#svg#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#rect#0;n#svg#1;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg-element-g/svg_element_g.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3220">
+          <caret line="115" column="20" lean-forward="false" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
+          <folding>
+            <element signature="e#979#983#0" expanded="true" />
+            <element signature="e#1064#1068#0" expanded="true" />
+            <element signature="e#1081#1087#0" expanded="true" />
+            <element signature="e#1087#1091#0" expanded="true" />
+            <element signature="e#1123#1127#0" expanded="true" />
+            <element signature="e#1144#1150#0" expanded="true" />
+            <element signature="e#1150#1156#0" expanded="true" />
+            <element signature="e#1156#1160#0" expanded="true" />
+            <element signature="e#1223#1227#0" expanded="true" />
+            <element signature="e#1244#1250#0" expanded="true" />
+            <element signature="e#1250#1256#0" expanded="true" />
+            <element signature="e#1256#1260#0" expanded="true" />
+            <element signature="e#1339#1343#0" expanded="true" />
+            <element signature="e#1360#1366#0" expanded="true" />
+            <element signature="e#1366#1372#0" expanded="true" />
+            <element signature="e#1372#1376#0" expanded="true" />
+            <element signature="e#1430#1434#0" expanded="true" />
+            <element signature="e#1455#1461#0" expanded="true" />
+            <element signature="e#1461#1467#0" expanded="true" />
+            <element signature="e#1467#1473#0" expanded="true" />
+            <element signature="e#1514#1520#0" expanded="true" />
+            <element signature="e#1520#1524#0" expanded="true" />
+            <element signature="e#1529#1533#0" expanded="true" />
+            <element signature="e#1546#1552#0" expanded="true" />
+            <element signature="e#1552#1558#0" expanded="true" />
+            <element signature="e#1558#1562#0" expanded="true" />
+            <element signature="e#1564#1568#0" expanded="true" />
+            <element signature="e#1577#1581#0" expanded="true" />
+            <element signature="e#1585#1589#0" expanded="true" />
+            <element signature="n#style#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#line#0;n#g#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#rect#0;n#g#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#text#0;n#g#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2176#2180#0" expanded="true" />
+            <element signature="e#2239#2243#0" expanded="true" />
+            <element signature="e#2256#2262#0" expanded="true" />
+            <element signature="e#2262#2266#0" expanded="true" />
+            <element signature="e#2310#2314#0" expanded="true" />
+            <element signature="e#2327#2333#0" expanded="true" />
+            <element signature="e#2333#2337#0" expanded="true" />
+            <element signature="e#2369#2373#0" expanded="true" />
+            <element signature="e#2386#2392#0" expanded="true" />
+            <element signature="e#2392#2396#0" expanded="true" />
+            <element signature="e#2467#2471#0" expanded="true" />
+            <element signature="e#2480#2484#0" expanded="true" />
+            <element signature="e#2486#2490#0" expanded="true" />
+            <element signature="n#style#0;n#g#0;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#1;n#g#0;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2976#2980#0" expanded="true" />
+            <element signature="e#3122#3126#0" expanded="true" />
+            <element signature="e#3139#3145#0" expanded="true" />
+            <element signature="e#3145#3149#0" expanded="true" />
+            <element signature="e#3238#3242#0" expanded="true" />
+            <element signature="e#3259#3265#0" expanded="true" />
+            <element signature="e#3265#3271#0" expanded="true" />
+            <element signature="e#3271#3275#0" expanded="true" />
+            <element signature="e#3319#3323#0" expanded="true" />
+            <element signature="e#3340#3346#0" expanded="true" />
+            <element signature="e#3346#3352#0" expanded="true" />
+            <element signature="e#3352#3356#0" expanded="true" />
+            <element signature="e#3388#3392#0" expanded="true" />
+            <element signature="e#3409#3415#0" expanded="true" />
+            <element signature="e#3415#3421#0" expanded="true" />
+            <element signature="e#3421#3425#0" expanded="true" />
+            <element signature="e#3496#3500#0" expanded="true" />
+            <element signature="e#3513#3519#0" expanded="true" />
+            <element signature="e#3519#3523#0" expanded="true" />
+            <element signature="e#3525#3529#0" expanded="true" />
+            <element signature="e#3538#3542#0" expanded="true" />
+            <element signature="e#3546#3550#0" expanded="true" />
+            <element signature="n#style#0;n#svg#2;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#g#0;n#svg#2;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#1;n#g#0;n#svg#2;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#4065#4069#0" expanded="true" />
+            <element signature="e#4211#4215#0" expanded="true" />
+            <element signature="e#4228#4234#0" expanded="true" />
+            <element signature="e#4234#4238#0" expanded="true" />
+            <element signature="e#4298#4302#0" expanded="true" />
+            <element signature="e#4319#4325#0" expanded="true" />
+            <element signature="e#4325#4331#0" expanded="true" />
+            <element signature="e#4331#4335#0" expanded="true" />
+            <element signature="e#4345#4349#0" expanded="true" />
+            <element signature="e#4370#4376#0" expanded="true" />
+            <element signature="e#4376#4382#0" expanded="true" />
+            <element signature="e#4382#4388#0" expanded="true" />
+            <element signature="e#4388#4392#0" expanded="true" />
+            <element signature="e#4436#4440#0" expanded="true" />
+            <element signature="e#4461#4467#0" expanded="true" />
+            <element signature="e#4467#4473#0" expanded="true" />
+            <element signature="e#4473#4479#0" expanded="true" />
+            <element signature="e#4479#4483#0" expanded="true" />
+            <element signature="e#4515#4519#0" expanded="true" />
+            <element signature="e#4540#4546#0" expanded="true" />
+            <element signature="e#4546#4552#0" expanded="true" />
+            <element signature="e#4552#4558#0" expanded="true" />
+            <element signature="e#4558#4562#0" expanded="true" />
+            <element signature="e#4633#4637#0" expanded="true" />
+            <element signature="e#4654#4660#0" expanded="true" />
+            <element signature="e#4660#4666#0" expanded="true" />
+            <element signature="e#4666#4670#0" expanded="true" />
+            <element signature="e#4674#4678#0" expanded="true" />
+            <element signature="e#4691#4697#0" expanded="true" />
+            <element signature="e#4697#4701#0" expanded="true" />
+            <element signature="e#4703#4707#0" expanded="true" />
+            <element signature="e#4716#4720#0" expanded="true" />
+            <element signature="e#4724#4728#0" expanded="true" />
+            <element signature="n#style#0;n#svg#3;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#g#0;n#svg#3;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#1;n#svg#0;n#g#0;n#svg#3;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg-element-rect/svg_element_rect.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3304">
+          <caret line="118" column="18" lean-forward="false" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
+          <folding>
+            <element signature="e#969#973#0" expanded="true" />
+            <element signature="e#1115#1119#0" expanded="true" />
+            <element signature="e#1132#1138#0" expanded="true" />
+            <element signature="e#1138#1142#0" expanded="true" />
+            <element signature="e#1240#1244#0" expanded="true" />
+            <element signature="e#1253#1257#0" expanded="true" />
+            <element signature="e#1261#1265#0" expanded="true" />
+            <element signature="n#style#0;n#rect#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1725#1729#0" expanded="true" />
+            <element signature="e#1824#1828#0" expanded="true" />
+            <element signature="e#1841#1847#0" expanded="true" />
+            <element signature="e#1847#1851#0" expanded="true" />
+            <element signature="e#1860#1864#0" expanded="true" />
+            <element signature="e#1881#1887#0" expanded="true" />
+            <element signature="e#1887#1893#0" expanded="true" />
+            <element signature="e#1893#1897#0" expanded="true" />
+            <element signature="e#1966#1970#0" expanded="true" />
+            <element signature="e#1987#1993#0" expanded="true" />
+            <element signature="e#1993#1999#0" expanded="true" />
+            <element signature="e#1999#2003#0" expanded="true" />
+            <element signature="e#2083#2087#0" expanded="true" />
+            <element signature="e#2098#2102#0" expanded="true" />
+            <element signature="e#2107#2111#0" expanded="true" />
+            <element signature="e#2124#2130#0" expanded="true" />
+            <element signature="e#2130#2134#0" expanded="true" />
+            <element signature="e#2138#2142#0" expanded="true" />
+            <element signature="e#2155#2161#0" expanded="true" />
+            <element signature="e#2161#2165#0" expanded="true" />
+            <element signature="e#2176#2180#0" expanded="true" />
+            <element signature="e#2197#2203#0" expanded="true" />
+            <element signature="e#2203#2209#0" expanded="true" />
+            <element signature="e#2209#2213#0" expanded="true" />
+            <element signature="e#2282#2286#0" expanded="true" />
+            <element signature="e#2303#2309#0" expanded="true" />
+            <element signature="e#2309#2315#0" expanded="true" />
+            <element signature="e#2315#2319#0" expanded="true" />
+            <element signature="e#2399#2403#0" expanded="true" />
+            <element signature="e#2414#2418#0" expanded="true" />
+            <element signature="e#2423#2427#0" expanded="true" />
+            <element signature="e#2440#2446#0" expanded="true" />
+            <element signature="e#2446#2450#0" expanded="true" />
+            <element signature="e#2454#2458#0" expanded="true" />
+            <element signature="e#2471#2477#0" expanded="true" />
+            <element signature="e#2477#2481#0" expanded="true" />
+            <element signature="e#2492#2496#0" expanded="true" />
+            <element signature="e#2513#2519#0" expanded="true" />
+            <element signature="e#2519#2525#0" expanded="true" />
+            <element signature="e#2525#2529#0" expanded="true" />
+            <element signature="e#2598#2602#0" expanded="true" />
+            <element signature="e#2619#2625#0" expanded="true" />
+            <element signature="e#2625#2631#0" expanded="true" />
+            <element signature="e#2631#2635#0" expanded="true" />
+            <element signature="e#2715#2719#0" expanded="true" />
+            <element signature="e#2730#2734#0" expanded="true" />
+            <element signature="e#2739#2743#0" expanded="true" />
+            <element signature="e#2756#2762#0" expanded="true" />
+            <element signature="e#2762#2766#0" expanded="true" />
+            <element signature="e#2770#2774#0" expanded="true" />
+            <element signature="e#2783#2787#0" expanded="true" />
+            <element signature="e#2791#2795#0" expanded="true" />
+            <element signature="n#style#0;n#rect#0;n#svg#0;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#text#0;n#svg#0;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#rect#0;n#svg#1;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#text#0;n#svg#1;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#rect#0;n#svg#2;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#text#0;n#svg#2;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#3659#3663#0" expanded="true" />
+            <element signature="e#3744#3748#0" expanded="true" />
+            <element signature="e#3761#3767#0" expanded="true" />
+            <element signature="e#3767#3771#0" expanded="true" />
+            <element signature="e#3850#3854#0" expanded="true" />
+            <element signature="e#3871#3877#0" expanded="true" />
+            <element signature="e#3877#3883#0" expanded="true" />
+            <element signature="e#3883#3887#0" expanded="true" />
+            <element signature="e#3924#3928#0" expanded="true" />
+            <element signature="e#3945#3951#0" expanded="true" />
+            <element signature="e#3951#3957#0" expanded="true" />
+            <element signature="e#3957#3961#0" expanded="true" />
+            <element signature="e#4031#4035#0" expanded="true" />
+            <element signature="e#4048#4054#0" expanded="true" />
+            <element signature="e#4054#4058#0" expanded="true" />
+            <element signature="e#4060#4064#0" expanded="true" />
+            <element signature="e#4073#4077#0" expanded="true" />
+            <element signature="e#4081#4085#0" expanded="true" />
+            <element signature="n#style#0;n#g#0;n#svg#2;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#rect#1;n#g#0;n#svg#2;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#4595#4599#0" expanded="true" />
+            <element signature="e#4741#4745#0" expanded="true" />
+            <element signature="e#4758#4764#0" expanded="true" />
+            <element signature="e#4764#4768#0" expanded="true" />
+            <element signature="e#4839#4843#0" expanded="true" />
+            <element signature="e#4856#4862#0" expanded="true" />
+            <element signature="e#4862#4866#0" expanded="true" />
+            <element signature="e#4965#4969#0" expanded="true" />
+            <element signature="e#4978#4982#0" expanded="true" />
+            <element signature="e#4986#4990#0" expanded="true" />
+            <element signature="n#style#0;n#svg#3;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#rect#0;n#svg#3;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#rect#1;n#svg#3;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg-element-circle/svg_element_circle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1820">
+          <caret line="65" column="10" lean-forward="false" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+          <folding>
+            <element signature="e#986#990#0" expanded="true" />
+            <element signature="e#1164#1168#0" expanded="true" />
+            <element signature="e#1181#1187#0" expanded="true" />
+            <element signature="e#1187#1191#0" expanded="true" />
+            <element signature="e#1248#1252#0" expanded="true" />
+            <element signature="e#1261#1265#0" expanded="true" />
+            <element signature="e#1269#1273#0" expanded="true" />
+            <element signature="n#style#1;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1584#1588#0" expanded="true" />
+            <element signature="e#1762#1766#0" expanded="true" />
+            <element signature="e#1779#1785#0" expanded="true" />
+            <element signature="e#1785#1789#0" expanded="true" />
+            <element signature="e#1876#1880#0" expanded="true" />
+            <element signature="e#1889#1893#0" expanded="true" />
+            <element signature="e#1897#1901#0" expanded="true" />
+            <element signature="n#style#1;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#0;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#svg#2;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#0;n#svg#2;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#circle#1;n#svg#2;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg-basic/circle.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg-element-ellipse/svg_element_ellipse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1624">
+          <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#ellipse#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1781#1787#0" expanded="true" />
+            <element signature="e#1787#1791#0" expanded="true" />
+            <element signature="n#style#0;n#ellipse#0;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ellipse#0;n#svg#2;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ellipse#1;n#svg#2;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/svg-basic/svg_in_browser.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -774,13 +1245,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/svg-basic/circle.svg">
-      <provider selected="true" editor-type-id="images">
+      <provider editor-type-id="images">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/svg-basic/svg_in_browser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
+        <state relative-caret-position="280">
           <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="16" selection-end-column="9" />
           <folding />
         </state>
@@ -788,7 +1265,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svg-icon/svg_icon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
+        <state relative-caret-position="840">
           <caret line="30" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="7" />
           <folding>
             <element signature="e#1186#1190#0" expanded="true" />
@@ -813,7 +1290,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svg-nested/svg-nested.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
+        <state relative-caret-position="1484">
           <caret line="53" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="7" />
           <folding>
             <element signature="e#845#849#0" expanded="true" />
@@ -857,7 +1334,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svg-element-g/svg_element_g.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
+        <state relative-caret-position="3220">
           <caret line="115" column="20" lean-forward="false" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
           <folding>
             <element signature="e#979#983#0" expanded="true" />
@@ -975,7 +1452,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svg-element-rect/svg_element_rect.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
+        <state relative-caret-position="3304">
           <caret line="118" column="18" lean-forward="false" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
           <folding>
             <element signature="e#969#973#0" expanded="true" />
@@ -1083,7 +1560,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/svg-element-circle/svg_element_circle.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="1820">
           <caret line="65" column="10" lean-forward="false" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
           <folding>
             <element signature="e#986#990#0" expanded="true" />
@@ -1114,7 +1591,7 @@
     <entry file="file://$PROJECT_DIR$/svg-element-ellipse/svg_element_ellipse.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#ellipse#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#1781#1787#0" expanded="true" />
@@ -1123,6 +1600,66 @@
             <element signature="n#style#0;n#ellipse#0;n#svg#2;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ellipse#1;n#svg#2;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg-element-line/svg_element_line.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="56" column="44" lean-forward="false" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
+          <folding>
+            <element signature="e#906#910#0" expanded="true" />
+            <element signature="e#1084#1088#0" expanded="true" />
+            <element signature="e#1101#1107#0" expanded="true" />
+            <element signature="e#1107#1111#0" expanded="true" />
+            <element signature="e#1173#1177#0" expanded="true" />
+            <element signature="e#1190#1196#0" expanded="true" />
+            <element signature="e#1196#1200#0" expanded="true" />
+            <element signature="e#1262#1266#0" expanded="true" />
+            <element signature="e#1275#1279#0" expanded="true" />
+            <element signature="e#1283#1287#0" expanded="true" />
+            <element signature="n#style#1;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#line#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#line#1;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1516850844422" expanded="false" signature="1351:1374" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg-element-polyline/svg_element_polyline.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="60" column="65" lean-forward="false" selection-start-line="60" selection-start-column="65" selection-end-line="60" selection-end-column="65" />
+          <folding>
+            <element signature="e#1121#1127#0" expanded="true" />
+            <element signature="e#1127#1131#0" expanded="true" />
+            <element signature="e#1223#1227#0" expanded="true" />
+            <element signature="n#style#0;n#polyline#0;n#svg#0;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1979#1985#0" expanded="true" />
+            <element signature="e#1985#1989#0" expanded="true" />
+            <element signature="e#2100#2104#0" expanded="true" />
+            <element signature="n#style#0;n#polyline#0;n#svg#1;n#center#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1516852093840" expanded="false" signature="1236:1240" ph="&lt;" />
+            <marker date="1516852093840" expanded="false" signature="1244:1248" ph="&gt;" />
+            <marker date="1516852093840" expanded="false" signature="1312:1335" ph="..." />
+            <marker date="1516852093840" expanded="false" signature="1416:1439" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svg-element-polygon/svg_element_polygon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="67" column="92" lean-forward="true" selection-start-line="67" selection-start-column="92" selection-end-line="67" selection-end-column="92" />
+          <folding />
         </state>
       </provider>
     </entry>

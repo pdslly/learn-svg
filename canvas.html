@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        #mycan{
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mycan">
+        YOUR BROWSER CANNOT SUPPORT CANVAS
+    </canvas>
+    <script src="./js/Tween.js"></script>
+    <script>
+        var mycan = document.getElementById('mycan')
+        let {innerWidth, innerHeight} = window
+        mycan.setAttribute('width', innerWidth+'px')
+        mycan.setAttribute('height', innerHeight+'px')
+        var ctx = mycan.getContext('2d')
+        ctx.translate(innerWidth/2, innerHeight)
+
+        function covertCoords(x, y){
+            return {x: innerWidth/2 - x, y: innerHeight - y}
+        }
+
+        mycan.addEventListener('click', function(evt){
+            let {clientX, clientY} = evt
+            var coords = {x: 0, y: 0}
+            var _coords = covertCoords(clientX, clientY)
+
+            new TWEEN.Tween(coords)
+                .to({ x: _coords.x, y: _coords.y }, 1000)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .onUpdate(function({x, y}) {
+                    ctx.fillStyle = "rgb(255, 0, 0)"
+                    ctx.beginPath()
+                    ctx.arc(-x, -y, 2, 0, Math.PI*2)
+                    ctx.closePath()
+                    ctx.fill()
+                    if (x === _coords.x) {
+                        drawwFireworks(-x, -y)
+                    }
+                })
+                .start()
+        })
+
+        function drawwFireworks(x, y) {
+            var count = 30
+            var i = 0
+            ctx.save()
+            ctx.translate(x, y)
+            ctx.strokeStyle = "red"
+            for(; i <= count; i++){
+                ctx.beginPath()
+                ctx.moveTo(0, 0)
+                ctx.lineTo(Math.cos(Math.PI*2*i/count)*100, Math.sin(Math.PI*2*i/count)*100)
+                ctx.closePath()
+                ctx.stroke()
+            }
+            ctx.restore()
+        }
+
+        function draw(time){
+            TWEEN.update()
+            ctx.fillStyle = "rgba(0, 0, 0, 0.2)"
+            ctx.fillRect(-innerWidth/2, -innerHeight, innerWidth, innerHeight)
+            requestAnimationFrame(draw)
+        }
+        requestAnimationFrame(draw)
+
+        // setInterval(draw, 50)
+    </script>
+</body>
+</html>
