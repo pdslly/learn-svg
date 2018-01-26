@@ -24,63 +24,115 @@
     </canvas>
     <script src="./js/Tween.js"></script>
     <script>
-        var mycan = document.getElementById('mycan')
-        let {innerWidth, innerHeight} = window
-        mycan.setAttribute('width', innerWidth+'px')
-        mycan.setAttribute('height', innerHeight+'px')
-        var ctx = mycan.getContext('2d')
-        ctx.translate(innerWidth/2, innerHeight)
 
-        function covertCoords(x, y){
-            return {x: innerWidth/2 - x, y: innerHeight - y}
-        }
-
-        mycan.addEventListener('click', function(evt){
-            let {clientX, clientY} = evt
-            var coords = {x: 0, y: 0}
-            var _coords = covertCoords(clientX, clientY)
-
-            new TWEEN.Tween(coords)
-                .to({ x: _coords.x, y: _coords.y }, 1000)
-                .easing(TWEEN.Easing.Quadratic.Out)
-                .onUpdate(function({x, y}) {
-                    ctx.fillStyle = "rgb(255, 0, 0)"
-                    ctx.beginPath()
-                    ctx.arc(-x, -y, 2, 0, Math.PI*2)
-                    ctx.closePath()
-                    ctx.fill()
-                    if (x === _coords.x) {
-                        drawwFireworks(-x, -y)
-                    }
-                })
-                .start()
-        })
-
-        function drawwFireworks(x, y) {
-            var count = 30
-            var i = 0
-            ctx.save()
-            ctx.translate(x, y)
-            ctx.strokeStyle = "red"
-            for(; i <= count; i++){
-                ctx.beginPath()
-                ctx.moveTo(0, 0)
-                ctx.lineTo(Math.cos(Math.PI*2*i/count)*100, Math.sin(Math.PI*2*i/count)*100)
-                ctx.closePath()
-                ctx.stroke()
+        function generalRandomColor(){
+            var r = ~~(255*Math.random() + 0.5)
+            var g = ~~(255*Math.random() + 0.5)
+            var b = ~~(255*Math.random() + 0.5)
+            let color = `rgb(${r}, ${g}, ${b})`
+            return {
+                color: color,
+                genRandomAlpha: function(){
+                    var a = (~~10*Math.random() - 1)/10 + 0.1
+                    return `rgba(${r}, ${g}, ${b}, ${a})`
+                }
             }
-            ctx.restore()
         }
 
-        function draw(time){
-            TWEEN.update()
-            ctx.fillStyle = "rgba(0, 0, 0, 0.2)"
-            ctx.fillRect(-innerWidth/2, -innerHeight, innerWidth, innerHeight)
+        function init(img) {
+            var mycan = document.getElementById('mycan')
+            let {innerWidth, innerHeight} = window
+            mycan.setAttribute('width', innerWidth+'px')
+            mycan.setAttribute('height', innerHeight+'px')
+            var ctx = mycan.getContext('2d')
+
+            ctx.translate(innerWidth/2, innerHeight)
+
+            function covertCoords(x, y){
+                var _x = innerWidth/2 - x
+                var _y = innerHeight - y
+                var _z = Math.sqrt(_x*_x + _y*_y)
+                return {
+                    x: _x,
+                    y: _y,
+                    quadrant: _x > 0 ? 1 : 2,
+                    sin: _y > 0 ? -Math.abs(_y/_z) : Math.abs(_y/_z),
+                    cos: _x > 0 ? -Math.abs(_x/_z) : Math.abs(_x/_z)
+                }
+            }
+
+            mycan.addEventListener('click', function(evt){
+                let {clientX, clientY} = evt
+                const LINELEN = 60
+                var coords = {x: 0, y: 0}
+                var _coords = covertCoords(clientX, clientY)
+                var _col = generalRandomColor()
+
+                new TWEEN.Tween(coords)
+                    .to({ x: _coords.x, y: _coords.y }, 1000)
+                    .easing(TWEEN.Easing.Quadratic.Out)
+                    .onUpdate(function({x, y}) {
+                        ctx.strokeStyle = _col.color
+                        ctx.beginPath()
+                        ctx.moveTo(-x, -y)
+                        ctx.lineTo(-x-_coords.cos*LINELEN, -y-_coords.sin*LINELEN)
+                        ctx.closePath()
+                        ctx.stroke()
+                        if (x === _coords.x) {
+                            drawFireworks(-x, -y, _col)
+                        }
+                    })
+                    .start()
+            })
+
+            function drawFireworks(x, y, _col) {
+                var firework = {len: 0}
+                function draw({len}){
+                    var count = 30
+                    var i = 0
+                    ctx.save()
+                    ctx.translate(x, y)
+                    for(; i <= count; i++){
+                        ctx.strokeStyle = _col.genRandomAlpha()
+                        ctx.beginPath()
+                        ctx.moveTo(0, 0)
+                        ctx.lineTo(Math.cos(Math.PI*2*i/count)*len, Math.sin(Math.PI*2*i/count)*len)
+                        ctx.closePath()
+                        ctx.stroke()
+                    }
+                    ctx.restore()
+                }
+
+                new TWEEN.Tween(firework)
+                    .to({len: 120}, 2000)
+                    .easing(TWEEN.Easing.Quadratic.Out)
+                    .onUpdate(function(firework) {
+                        draw(firework)
+                    })
+                    .start()
+            }
+
+            function draw(time) {
+                TWEEN.update()
+                ctx.globalAlpha = 0.2
+                // ctx.fillRect(-innerWidth/2, -innerHeight, innerWidth, innerHeight)
+                ctx.drawImage(img, -innerWidth/2, -innerHeight, innerWidth, innerHeight)
+                ctx.globalAlpha = 1
+                requestAnimationFrame(draw)
+            }
             requestAnimationFrame(draw)
         }
-        requestAnimationFrame(draw)
 
-        // setInterval(draw, 50)
+        function loadImg(callback) {
+            const IMGABS = "http://i2.hoopchina.com.cn/user/558/3205558/13431900001.jpg"
+            var _img = new Image()
+            _img.onload = function(){
+                callback(this)
+            }
+            _img.src = IMGABS
+        }
+
+        loadImg(init)
     </script>
 </body>
 </html>
