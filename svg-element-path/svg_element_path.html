@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            text-align: center;
+            line-height: 60px;
+            background: darkorange;
+            color: blue;
+            font-size: 30px;
+        }
+        .txt{
+            width: 600px;
+            text-indent: 1em;
+            text-align: left;
+            word-break: break-all;
+        }
+        pre{
+            background: bisque;
+            line-height: 2;
+            text-align: left;
+            white-space: pre-line;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">SVG path元素使用</header>
+<center>
+    <h1>什么是path元素</h1>
+
+    <div class="txt">
+        SVG <mark>path</mark>元素用于绘制组合线条、弧线、曲线等填充或非填充的高级形状。<path>元素可能是所有SVG形状中最高级功能最多的形状。它可能也是最难掌握的元素。
+    </div>
+
+    <h1>SVG path示例</h1>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;path d="M30,10
+                     &nbsp;&nbsp;&nbsp;&nbsp;L270,10
+                     &nbsp;&nbsp;&nbsp;&nbsp;A10,10 0 0,1 270,30
+                     &nbsp;&nbsp;&nbsp;&nbsp;L30,30
+                     &nbsp;&nbsp;&nbsp;&nbsp;A10,10 0 0,1 30,10
+                     &nbsp;&nbsp;&nbsp;&nbsp;M10,40
+                     &nbsp;&nbsp;&nbsp;&nbsp;L290,40" style="stroke: red; stroke-width: 2; fill: none;"/&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M30,10
+                 L270,10
+                 A10,10 0 0,1 270,30
+                 L30,30
+                 A10,10 0 0,1 30,10
+                 M10,40
+                 L290,40" style="stroke: red; stroke-width: 2; fill: none;"/>
+    </svg>
+
+    <div class="txt">
+        <p>注意看图像如何包含一个圆弧和两条线段，已经第二条线如何不与第一个圆弧和线连接。</p>
+        <mark>&lt;path&gt;</mark> 元素的所有绘图都在d属性中指定。d属性包含绘制命令。上面的例子中，M发出“移至”命令，A发出“弧”命令，L发出“线段”命令。这些命令都作用在一个“虚拟画笔”。这支笔可以移动，绘制形状等。
+    </div>
+
+    <h1>设置和移动画笔</h1>
+
+    <div class="txt">
+        在 <mark>&lt;path&gt;</mark> 的属性 <mark>d</mark> 中,第一个绘图命令应该总是一个移动命令，在你绘制任何东西之前，你应该移动画笔到某个位置，这里都是使用 <mark>M</mark> 命令来完成的。
+    </div>
+
+    <h1>线条</h1>
+
+    <div class="txt">
+        使用 <mark>&lt;path&gt;</mark> 元素绘制一条线可能是最简单的命令。绘制线条使用 <mark>L</mark> 和<mark>l</mark>（小写L）命令完成。示例如下:
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;path d="M10,10 l280,0" style="stroke: red; stroke-width: 2; fill: none;"/&gt;
+            &nbsp;&lt;path d="M10,20 L290,20" style="stroke: blue; stroke-width: 2; fill: none;"/&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M10,10 l280,0" style="stroke: red; stroke-width: 2; fill: none;"/>
+        <path d="M10,20 L290,20" style="stroke: blue; stroke-width: 2; fill: none;"/>
+    </svg>
+
+    <div class="txt">
+        <p>L和l命令之间的区别在于，大写版本（L）命令后跟的是一个绝对定位的点，而小写版本（l）命令后跟的是一个相对定位的点。相对点是虚拟画笔开始绘制线之前的点加上l命令后跟的坐标。</p>
+        如果虚拟画笔定位在50,50点，并且你使用了l100,100命令，线段将绘制到点50+100,50+100 = 150,150。如果使用L100,100命令，线段将被精确地绘制到点100,100，而不会考虑虚拟画笔的位置。
+    </div>
+
+    <h1>移动虚拟画笔绘图</h1>
+
+    <div class="txt">
+        路径形状始终会从虚拟画笔的最后一个点绘制到一个新点。每一个绘制命令都带有一个终点。执行命令后，虚拟画笔将位于该绘图命令的结束点。下一个绘图命令将从该点开始。
+    </div>
+
+    <h1>弧线</h1>
+
+    <div class="txt">
+        对 <mark>&lt;path&gt;</mark> 元素使用 A 和 a 命令可以绘制圆弧。与线段一样，大写命令（A）对其终点使用绝对坐标，而小写名（a）使用相对坐标（相对于起点）。示例如下：
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;path d="M10,145 a140,140 0 1,1 0,10" style="stroke: red; stroke-width: 2; fill: none;"/&gt;
+        &lt;/svg&gt;
+    </pre>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M10,145 a140,140 0 1,1 0,10" style="stroke: red; stroke-width: 2; fill: none;"/>
+    </svg>
+
+    <div class="txt">
+        <p>这个例子绘制了一条从点(10,145)到点(10,155)（a命令相对位置）的圆弧。</p>
+        <p>圆弧的半径有A命令上的前两个参数指定。第一个参数是rx（x方向上的半径），第二个参数是ry（y方向上的半径）。将rx和ry设置为相同的值会生成一个圆形的圆弧。将rx和ry设置为不同的值会生成一个椭圆的圆弧。上面的例子中，rx被设置为30，ry被设置为50。</p>
+        <p>A命令上的第三个参数是x-axis-rotation。这将设置相对于正常x轴旋转一定角度的弧的x轴。上面的例子中x-axis-rotation被设置为0。大部分情况下，你不需要改变这个参数。</p>
+        <p>第四和第五个参数分别是large-arc-flag和sweep-flag。large-arc-flag参数决定了绘制满足起点、终点、rx和ry的大圆弧还是小圆弧。下面一个例子中，绘制了4个圆弧，每个圆弧带有large-arc-flag和sweep-flag的不同组合：</p>
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;path d="M100,100 a60,60 0 0,1 80,80" style="stroke: red; stroke-width: 2; fill: none;"/&gt;
+            &nbsp;&lt;path d="M100,100 a60,60 0 1,0 80,80" style="stroke: blue; stroke-width: 2; fill: none;"/&gt;
+            &nbsp;&lt;path d="M100,100 a60,60 0 1,1 80,80" style="stroke: green; stroke-width: 2; fill: none;"/&gt;
+            &nbsp;&lt;path d="M100,100 a60,60 0 0,0 80,80" style="stroke: yellow; stroke-width: 2; fill: none;"/&gt;
+        &lt;/svg&gt;
+    </pre>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M100,100 a60,60 0 0,1 80,80" style="stroke: yellow; stroke-width: 2; fill: none;"/>
+        <path d="M100,100 a60,60 0 1,0 80,80" style="stroke: blue; stroke-width: 2; fill: none;"/>
+        <path d="M100,100 a60,60 0 1,1 80,80" style="stroke: green; stroke-width: 2; fill: none;"/>
+        <path d="M100,100 a60,60 0 0,0 80,80" style="stroke: red; stroke-width: 2; fill: none;"/>
+    </svg>
+
+    <div class="txt">
+        <p>四个不同的圆弧都是从点40,20绘制到点60,70。一个长圆弧、一个小圆弧、以及它们两个的镜像。large-arc-flag决定了绘制大圆弧还是小圆弧。sweep-flag决定了圆弧是否为从起点到终点的镜像。其实，sweep-flag控制了圆弧绘制的方向（顺时针或逆时针），这就导致了“镜像”效果。</p>
+        <p>绘制的第一个圆弧是黄色弧。large-arc-flag被设置为0表示将绘制较小的弧。sweep-flag也被设置为0表示圆弧非镜像版。下面是一个红色圆弧：</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M100,100 a60,60 0 0,0 80,80" style="stroke: red; stroke-width: 2; fill: none;"/>
+        <text x="140" y="130" style="fill: blue;">large-arc-flag = 0</text>
+        <text x="140" y="150" style="fill: blue;">sweep-flag = 0</text>
+    </svg>
+
+    <div class="txt">
+        <p>第二个圆弧是蓝色弧。large-arc-flag 被设置为1表示绘制从点（100,100）到点（180,180）之间的两个可能的圆弧中较大的那个。下面将红色和蓝色圆弧绘制在一起说明他们的区别：</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M100,100 a60,60 0 0,0 80,80" style="stroke: red; stroke-width: 2; fill: none;"/>
+        <path d="M100,100 a60,60 0 1,0 80,80" style="stroke: blue; stroke-width: 2; fill: none;"/>
+        <text x="140" y="130" style="fill: red;">large-arc-flag = 0</text>
+        <text x="140" y="150" style="fill: red;">sweep-flag = 0</text>
+        <text x="140" y="240" style="fill: blue;">large-arc-flag = 1</text>
+        <text x="140" y="260" style="fill: blue;">sweep-flag = 0</text>
+    </svg>
+
+    <div class="txt">
+        <p>黄色和绿色圆弧（从前面例子中的所有四个圆弧看出）与蓝色和红色圆弧相同，只是它们的sweep-flag被设置为1。这就意味着，它们将从起点到终点的轴上绘制镜像版的弧。</p>
+    </div>
+</center>
+</body>
+</html>
