@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            text-align: center;
+            line-height: 60px;
+            background: darkorange;
+            color: blue;
+            font-size: 30px;
+        }
+        .txt{
+            width: 600px;
+            text-indent: 1em;
+            text-align: left;
+            word-break: break-all;
+        }
+        mark{
+            background: #eee;
+            padding: 0 4px;
+        }
+        pre{
+            background: bisque;
+            line-height: 2;
+            text-align: left;
+            white-space: pre-line;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">SVG marker元素使用</header>
+<center>
+    <h1>什么是marker元素</h1>
+
+    <div class="txt">
+        <p>SVG marker被用来标记线段或路径的开始、中间和结束。例如，你可以使用圆形或正方形标记作为路径的开始，并使用一个箭头标记路径的结束。</p>
+    </div>
+
+    <h1>SVG marker示例</h1>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;defs&gt;
+                &nbsp;&nbsp;&lt;marker id="markerCircle" markerWidth="8" markerHeight="8" refX="4" refY="4"&gt;
+                    &nbsp;&nbsp;&nbsp;&lt;circle cx="4" cy="4" r="4" style="stroke: none;fill: #000;"/&gt;
+                &nbsp;&nbsp;&lt;/marker&gt;
+                &nbsp;&nbsp;&lt;marker id="markerArrow" markerWidth="10" markerHeight="10" refX="5" refY="5"&gt;
+                    &nbsp;&nbsp;&nbsp;&lt;polygon points="0,0 10,0 5,10" style="stroke: none;fill: #000;"/&gt;
+                &nbsp;&nbsp;&lt;/marker&gt;
+            &nbsp;&lt;/defs&gt;
+    
+            &nbsp;&lt;path d="M10,10 L290,10 290,290" style="fill: none; stroke: #6666ff; marker-start: url(#markerCircle); marker-end: url(#markerArrow)"/&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <defs>
+            <marker id="markerCircle" markerWidth="8" markerHeight="8" refX="4" refY="4">
+                <circle cx="4" cy="4" r="4" style="stroke: none;fill: #000;"/>
+            </marker>
+            <marker id="markerArrow" markerWidth="10" markerHeight="10" refX="5" refY="5">
+                <polygon points="0,0 10,0 5,10" style="stroke: none;fill: #000;"/>
+            </marker>
+        </defs>
+
+        <path d="M10,10 L290,10 290,290" style="fill: none; stroke: #6666ff; marker-start: url(#markerCircle); marker-end: url(#markerArrow)"/>
+    </svg>
+
+    <div class="txt">
+        <p>可以通过 &lt;marker&gt; 元素创建标记。&lt;marker&gt; 元素必须嵌套在 &lt;defs&gt; 元素内。 &lt;defs&gt; 元素内通常保存一组可重用的SVG图片定义。</p>
+    </div>
+
+    <h1>定义Marker</h1>
+
+    <pre>
+        &lt;defs&gt;
+            &nbsp;&lt;marker markerWidth="8" markerHeight="8" refX="4" refY="4"&gt;
+                &nbsp;&nbsp;&lt;circle cx="4" cy="4" r="4" style="stroke: none; fill: #000;"/&gt;
+            &nbsp;&lt;/marker&gt;
+        &lt;/defs&gt;
+    </pre>
+
+    <div class="txt">
+        <p>这个例子定义了一个宽度（markerWidth="8"）和高度（markerHeight="8"）都为8的标记。宽度和高度需要显示设置，因为标记是一个独立的图形元素。</p>
+        <p><mark>&lt;marker&gt;</mark>元素的id属性是用来在<mark>&lt;path&gt;</mark>元素中对其引用。</p>
+        <p>标记中的<mark>refX</mark>和<mark>refY</mark>坐标集被用作参考点。参考点是使用此标记的路径的开始位置。此例子中，<mark>refX</mark>和<mark>refY</mark>设置为圆的中心，意味着圆的中心将被放在路径的开始位置。如果未设置<mark>refX</mark>和<mark>refY</mark>，其默认为0，即标记的左上角会被放在路径的开始处。</p>
+        <p><mark>&lt;marker&gt;</mark>元素中是一个<mark>&lt;circle&gt;</mark>元素。<mark>circle</mark>元素的圆心（cx和cy）在点5,5。中心点是标记虚拟框内的中心。它不在实际放置在图像中的位置。在<mark>&lt;marker&gt;</mark>元素上使用<mark>markerWidth</mark>和<mark>markerHeight</mark>将虚拟框的大小设置为8,8。</p>
+    </div>
+
+    <h1>自动定向</h1>
+
+    <div class="txt">
+        <p><mark>&lt;path&gt;</mark>内部的<mark>&lt;marker&gt;</mark>元素绘制了一个箭头指向右边的三角形。然而，如果路径不是一条水平线，你就需要旋转三角形来适应路径的方向。你可以将<mark>orient</mark>属性设置为<b>auto</b>来实现上述效果。<mark>&lt;marker&gt;</mark>元素将会旋转其内部的图形，来适应引用它的路径。</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <defs>
+            <marker id="markerArrowAuto" markerWidth="13" markerHeight="13" refX="2" refY="6" orient="auto">
+                <polygon points="2,2 2,11 10,6" style="fill: #000; stroke: none;"/>
+            </marker>
+        </defs>
+        <line x1="10" y1="0" x2="60" y2="240" style="stroke: blue; fill: none; marker-end: url(#markerArrowAuto);"/>
+        <line x1="10" y1="0" x2="100" y2="240" style="stroke: blue; fill: none; marker-end: url(#markerArrowAuto);"/>
+        <line x1="10" y1="0" x2="140" y2="240" style="stroke: blue; fill: none; marker-end: url(#markerArrowAuto);"/>
+        <line x1="10" y1="0" x2="180" y2="240" style="stroke: blue; fill: none; marker-end: url(#markerArrowAuto);"/>
+        <line x1="10" y1="0" x2="220" y2="240" style="stroke: blue; fill: none; marker-end: url(#markerArrowAuto);"/>
+    </svg>
+
+    <div class="txt">
+        <p>这就是将<mark>&lt;marker&gt;</mark>元素中的orient属性设置为auto达到的效果。</p>
+        <p>你也可以将<mark>orient</mark>属性值设置为固定的角度（如45）。这将导致标记旋转指定的角度。然而，这并不如自动定向功能那么有用。</p>
+    </div>
+
+    <h1>在Path中应用Marker</h1>
+
+    <div class="txt">
+        <p>你可以在path上使用这些CSS属性引用标记：</p>
+        <ul>
+            <li><b>marker-start</b></li>
+            <li><b>marker-mid</b></li>
+            <li><b>marker-end</b></li>
+        </ul>
+        <p>这三个CSS属性分别为路径的开始、中间点和结束指定标记。</p>
+        <p>必须在<path>元素的style属性中使用这些CSS属性。你可以通过标记的id属性来引用它，就像下面这样：</p>
+        <pre>
+            marker-start: url(#markerId);
+        </pre>
+        <p>markerId由<mark>&lt;marker&gt;</mark>元素的id属性值替换。</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <defs>
+            <marker id="markerCircle3" markerWidth="10" markerHeight="10" refX="5" refY="5">
+                <circle cx="5" cy="5" r="5" style="fill: #000; stroke: none;"/>
+            </marker>
+            <marker id="markerArrow3" markerWidth="10" markerHeight="10" refX="0" refY="5" orient="auto">
+                <polygon points="0,0 0,10 10,5" style="fill: #000; stroke: none;"/>
+            </marker>
+        </defs>
+        <polyline points="10,10 290,10 290,290 10,290 10,30" style="stroke: blue; fill: none; marker-start: url(#markerCircle3); marker-mid: url(#markerCircle3); marker-end: url(#markerArrow3);"/>
+    </svg>
+
+    <div class="txt">
+        <p>在其它形状中引用Marker</p>
+    </div>
+
+    <h1>标记单位</h1>
+
+    <div class="txt">
+        <p>标记的大小可以设置为适应路径边框宽度。这里有一个可视化的例子：</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <defs>
+            <marker id="markerCircle3" markerWidth="10" markerUnits="strokeWidth" markerHeight="10" refX="5" refY="5">
+                <circle cx="5" cy="5" r="3" style="fill: #000; stroke: none;"/>
+            </marker>
+            <marker id="markerArrow3" markerWidth="10" markerUnits="strokeWidth" markerHeight="10" refX="0" refY="5" orient="auto">
+                <polygon points="0,0 0,10 10,5" style="fill: #000; stroke: none;"/>
+            </marker>
+        </defs>
+        <line x1="10" y1="20" x2="10" y2="280" style="stroke-width: 1; stroke: blue; fill: none; marker-start: url(#markerCircle3); marker-end: url(#markerArrow3);"/>
+        <line x1="30" y1="20" x2="30" y2="280" style="stroke-width: 1.5; stroke: blue; fill: none; marker-start: url(#markerCircle3); marker-end: url(#markerArrow3);"/>
+        <line x1="60" y1="20" x2="60" y2="280" style="stroke-width: 2; stroke: blue; fill: none; marker-start: url(#markerCircle3); marker-end: url(#markerArrow3);"/>
+    </svg>
+
+    <div class="txt">
+        <p>你可以将<mark>&lt;marker&gt;</mark>元素的<b>markerUnits</b>设置为<b>strokeWidth</b>达到此效果。这实际上也是它的默认值，因此即使你未设置<b>markerUnits</b>属性，默认会达到此效果</p>
+    </div>
+</center>
+</body>
+</html>

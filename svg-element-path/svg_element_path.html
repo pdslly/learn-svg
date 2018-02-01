@@ -28,6 +28,19 @@
             white-space: pre-line;
             padding-left: 20px;
         }
+        table{
+            width: 800px;
+            border: 1px solid #ddd;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px solid #ddd;
+            padding: 10px;
+            word-break: break-all;
+        }
+        tr:nth-of-type(2n){
+            background: #f8f8f8;
+        }
     </style>
 </head>
 <body>
@@ -143,7 +156,7 @@
     </svg>
 
     <div class="txt">
-        <p>四个不同的圆弧都是从点40,20绘制到点60,70。一个长圆弧、一个小圆弧、以及它们两个的镜像。large-arc-flag决定了绘制大圆弧还是小圆弧。sweep-flag决定了圆弧是否为从起点到终点的镜像。其实，sweep-flag控制了圆弧绘制的方向（顺时针或逆时针），这就导致了“镜像”效果。</p>
+        <p>四个不同的圆弧都是从点100,100绘制到点180,180。一个长圆弧、一个小圆弧、以及它们两个的镜像。large-arc-flag决定了绘制大圆弧还是小圆弧。sweep-flag决定了圆弧是否为从起点到终点的镜像。其实，sweep-flag控制了圆弧绘制的方向（顺时针或逆时针），这就导致了“镜像”效果。</p>
         <p>绘制的第一个圆弧是黄色弧。large-arc-flag被设置为0表示将绘制较小的弧。sweep-flag也被设置为0表示圆弧非镜像版。下面是一个红色圆弧：</p>
     </div>
 
@@ -169,6 +182,263 @@
     <div class="txt">
         <p>黄色和绿色圆弧（从前面例子中的所有四个圆弧看出）与蓝色和红色圆弧相同，只是它们的sweep-flag被设置为1。这就意味着，它们将从起点到终点的轴上绘制镜像版的弧。</p>
     </div>
+
+    <h1>二次贝塞尔曲线 （Quadratic Bezier Curves）</h1>
+
+    <div class="txt">
+        <p>也可以使用 <mark>&lt;path&gt;</mark> 元素绘制二次贝塞尔曲线。可以通过Q和q命令完成绘制二次贝塞尔曲线。和线段一样，大写命令（Q）使用绝对坐标，小写命令（q）使用相对坐标（相对于起点）。下面是一个简单的二次曲线例子：</p>
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;path d="M10,10 Q0,300 290,290" style="stroke: red; stroke-width: 2; fill: none;"/&gt;
+        &lt;/svg&gt;
+    </pre>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M10,10 Q0,300 290,290" style="stroke: red; stroke-width: 2; fill: none;"/>
+    </svg>
+
+    <div class="txt">
+        <p>该示例从点50,50到点100,100绘制了一条二次贝塞尔曲线，控制点为50,200。控制点是Q命令上设置的前两个参数。</p>
+        <p>控制点就像磁铁一样拉动曲线。曲线上的点越接近控制点，控制点拉入越多，意味着更接近控制点。下面是在图像上绘制控制点的更多示例：</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M10,10 Q10,290 290,290" style="stroke: red; stroke-width: 2; fill: none;"/>
+        <circle cx="10" cy="290" r="4" style="fill: blue;" />
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M10,10 Q290,10 290,290" style="stroke: red; stroke-width: 2; fill: none;"/>
+        <circle cx="290" cy="10" r="4" style="fill: blue;" />
+    </svg>
+
+    <div class="txt">
+        <p>事实上，如果你从起点到控制点绘制一条线，再从控制点到终点绘制另一条线，那么这两条线的中点之间的连线将是曲线的切线。如图所示：</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M10,10 Q10,290 290,290" style="stroke: red; stroke-width: 2; fill: none;"/>
+        <path d="M10,290 L10,0 M10,290 L300,290 M10,150 L150,290" style="stroke: #000; fill: none;" />
+        <circle cx="10" cy="290" r="4" style="fill: blue;" />
+    </svg>
+
+    <h1>三次贝塞尔曲线 （Cubic Bezier Curves）</h1>
+
+    <div class="txt">
+        <p>使用C和c命令绘制三次贝塞尔曲线。三次贝塞尔曲线类似于二次贝塞尔曲线，但是它有两个控制点。和线段一样，大写命令（C）使用其终点的绝对坐标，而小写命令（c）使用相对坐标（相对于起始点）。示例代码如下：</p>
+    </div>
+
+    <div class="txt">
+        <p>下面是绘制了控制点的图像：</p>
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;path d="M0,150 C100,10 200,290 300,150" style="stroke: red; stroke-width: 2; fill: none;"/&gt;
+            &nbsp;&lt;circle cx="100" cy="10" r="4" style="fill: blue;" /&gt;
+            &nbsp;&lt;circle cx="200" cy="290" r="4" style="fill: blue;" /&gt;
+        &lt;/svg&gt;
+    </pre>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M0,150 C100,10 200,290 300,150" style="stroke: red; stroke-width: 2; fill: none;"/>
+        <circle cx="100" cy="10" r="4" style="fill: blue;" />
+        <circle cx="200" cy="290" r="4" style="fill: blue;" />
+    </svg>
+
+    <div class="txt">
+        <p>你可以使用三次贝塞尔曲线创建高级曲线。如下图几个例子：</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M100,150 C10,290 290,290 200,150" style="stroke: red; stroke-width: 2; fill: none;"/>
+        <circle cx="10" cy="290" r="4" style="fill: blue;" />
+        <circle cx="290" cy="290" r="4" style="fill: blue;" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M70,100 C10,10 290,290 230,200" style="stroke: red; stroke-width: 2; fill: none;"/>
+        <circle cx="10" cy="10" r="4" style="fill: blue;" />
+        <circle cx="290" cy="290" r="4" style="fill: blue;" />
+    </svg>
+
+    <h1>闭合路径（Closing The Path）</h1>
+
+    <div class="txt">
+        <p><mark>&lt;mark&gt;</mark> 元素具有可用于闭合路径的快捷命令，意味着绘制一条从终点到起点的线段。闭合命令为Z（或者z，闭合路径的大小写命令没有区别）。示例如下：</p>
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;path d="M10,10 L10,290 L290,290 Z" style="stroke: red; stroke-width: 2; fill: rgba(0,0,255,0.5);"/&gt;
+        &lt;/svg&gt;
+    </pre>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M10,10 L10,290 L290,290 Z" style="stroke: red; stroke-width: 2; fill: rgba(0,0,255,0.5);"/>
+    </svg>
+
+    <h1>符号缩写（Notational Shotcuts）</h1>
+
+    <div class="txt">
+        <p>如果你需要多次使用相同的命令，可以省略命令字母，仅仅需要提供一组额外的参数。示例如下</p>
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;path d="M10,10 L10,290 290,290 290,10 10,10" style="stroke: red; stroke-width: 2; fill: rgba(0,0,255,0.5);"/&gt;
+        &lt;/svg&gt;
+    </pre>
+    
+    <div class="txt">
+        <p>此例子演示了如何将其他参数传递给l命令，如同l位于每组参数前面一样。这也适用于其他路径命令。结果图片如下：</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <path d="M10,10 L10,290 290,290 290,10 10,10" style="stroke: red; stroke-width: 2; fill: rgba(0,0,255,0.5);"/>
+    </svg>
+
+    <h1>路径命令（Path Commands）</h1>
+
+    <div class="txt">
+        <p>下面是SVG path元素中可能的命令的一个列表。每个命令由一个字母和一组数字（坐标等）组成，它们是该命令的参数。大写命令通常将坐标参数解释为绝对坐标。小写命令通常将坐标参数解释为当前虚拟画笔的相对位置。</p>
+    </div>
+
+    <table>
+        <colgroup width="50px"></colgroup>
+        <colgroup span="2" width="160px"></colgroup>
+        <thead>
+        <tr>
+            <th>命令</th>
+            <th>参数</th>
+            <th>名称</th>
+            <th>描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>M</td>
+            <td>x,y</td>
+            <td>移至</td>
+            <td>将虚拟画笔移动到指定点x,y处而不绘制图。</td>
+        </tr>
+        <tr>
+            <td>m</td>
+            <td>x,y</td>
+            <td>移至</td>
+            <td>将虚拟画笔移动至相对于其当前坐标的x,y处而不进行绘图操作。</td>
+        </tr>
+        <tr>
+            <td>L</td>
+            <td>x,y</td>
+            <td>线路</td>
+            <td>从虚拟画笔当前位置绘制一条到x,y点的直线。</td>
+        </tr>
+        <tr>
+            <td>l</td>
+            <td>x,y</td>
+            <td>线路</td>
+            <td>从虚拟画笔当前位置绘制一条到相对于画笔当前位置的x,y点的直线。</td>
+        </tr>
+        <tr>
+            <td>H</td>
+            <td>x</td>
+            <td>水平线</td>
+            <td>绘制一条到指定点（x坐标由参数指定，y坐标为虚拟画笔当前的纵坐标）的水平线。</td>
+        </tr>
+        <tr>
+            <td>h</td>
+            <td>x</td>
+            <td>水平线</td>
+            <td>绘制一条到指定点（x坐标为虚拟画笔当前横坐标+指定的x，y坐标为虚拟画笔当前的纵坐标）的水平线。</td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td>y</td>
+            <td>垂直线</td>
+            <td>绘制一条到指定点（x坐标为虚拟画笔当前横坐标，y坐标由参数指定）的垂直线。</td>
+        </tr>
+        <tr>
+            <td>v</td>
+            <td>y</td>
+            <td>垂直线</td>
+            <td>绘制一条到指定点（x坐标为虚拟画笔当前横坐标，y坐标为虚拟画笔当前的纵坐标+参数指定的值）的垂直线。</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>x1,y1 x2,y2 x,y</td>
+            <td>曲线</td>
+            <td>从画笔当前点到x,y点绘制一条三次贝塞尔曲线。x1,y1和x2,y2是曲线的开始和结束控制点，控制其如何弯曲。</td>
+        </tr>
+        <tr>
+            <td>c</td>
+            <td>x1,y1 x2,y2 x,y</td>
+            <td>曲线</td>
+            <td>与C相同，但是坐标点为相对于画笔坐标的位置。</td>
+        </tr>
+        <tr>
+            <td>S</td>
+            <td>x2,y2 x,y</td>
+            <td>平滑曲线缩写</td>
+            <td>从画笔位置到点x,y绘制一条三次贝塞尔曲线。x2,y2为结束控制点。开始控制点与前一条曲线的结束控制点相同。</td>
+        </tr>
+        <tr>
+            <td>s</td>
+            <td>x2,y2 x,y</td>
+            <td>平滑曲线缩写</td>
+            <td>与S相同，但是坐标点为相对于画笔坐标的位置。</td>
+        </tr>
+        <tr>
+            <td>Q</td>
+            <td>x1,y1 x,y</td>
+            <td>二次贝塞尔曲线</td>
+            <td>从画笔当前坐标到x,y点绘制一条二次贝塞尔曲线。x1,y1是控制曲线如何弯曲的控制点。</td>
+        </tr>
+        <tr>
+            <td>q</td>
+            <td>x1,y1 x,y</td>
+            <td>二次贝塞尔曲线</td>
+            <td>与Q相同，但是坐标点为相对于画笔坐标的位置。</td>
+        </tr>
+        <tr>
+            <td>T</td>
+            <td>x,y</td>
+            <td>平滑二次贝塞尔曲线缩写</td>
+            <td>从画笔位置到点x,y绘制一条三次贝塞尔曲线。控制点与所使用的的最后一个控制点相同。</td>
+        </tr>
+        <tr>
+            <td>t</td>
+            <td>x,y</td>
+            <td>平滑二次贝塞尔曲线缩写</td>
+            <td>与T相同，但是坐标点为相对于画笔坐标的位置。</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>rx,ry x-axis-rotation large-arc-flag,sweepflag x,y</td>
+            <td>椭圆弧</td>
+            <td>从当前点到x,y点绘制一条椭圆弧。rx和ry为椭圆在x和y方向上的半径。x-rotation确定圆弧围绕x轴旋转的角度。当rx和ry的值不同时，它才会有效果。large-arc-flag似乎没有被使用（可以为0或1）。值（0或1）都不会改变圆弧。</td>
+        </tr>
+        <tr>
+            <td>a</td>
+            <td>rx,ry x-axis-rotation large-arc-flag,sweepflag x,y</td>
+            <td>椭圆弧</td>
+            <td>与A相同，但是坐标点为相对于画笔坐标的位置。</td>
+        </tr>
+        <tr>
+            <td>Z</td>
+            <td></td>
+            <td>闭合路径</td>
+            <td>通过从当前点到第一个点绘制一条线来关闭路径。</td>
+        </tr>
+        <tr>
+            <td>z</td>
+            <td></td>
+            <td>闭合路径</td>
+            <td>通过从当前点到第一个点绘制一条线来关闭路径。</td>
+        </tr>
+        </tbody>
+    </table>
 </center>
 </body>
 </html>
