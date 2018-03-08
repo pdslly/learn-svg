@@ -1,3 +1,189 @@
-aaaaaaa
-645641341564654
-ccccccc
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            text-align: center;
+            line-height: 60px;
+            background: darkorange;
+            color: blue;
+            font-size: 30px;
+        }
+        .txt{
+            width: 600px;
+            text-indent: 1em;
+            text-align: left;
+            word-break: break-all;
+        }
+        pre{
+            background: bisque;
+            line-height: 2;
+            text-align: left;
+            white-space: pre-line;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">SVG Text元素使用</header>
+<center>
+    <h1>Text示例</h1>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;text x="150" y="150" style="fill: red; font-size: 30px; text-anchor: middle; text-align: center;"&gt;HELLO WORLD&lt;/text&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <div class="txt">
+        <p>此例定义了一个位于x=10,y=40处的文本。文本内容是“HELLO WORLD”。</p>
+        <p>结果图片如下：</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <text x="150" y="150" style="fill: red; font-size: 30px; text-anchor: middle; text-align: center;">HELLO WORLD</text>
+    </svg>
+
+    <h1>Text定义</h1>
+
+    <div class="txt">
+        <p>在深入了解SVG文本之前，最好先了解下面三个定义：</p>
+        <ul>
+            <li>字形 字形是字母或符号的视觉表现。因为字母“a”有许多不同的视觉表现，所以我们可以使用多个不同的字形来绘制。</li>
+            <li>字体 字体是可以可视化一组字母和符号的字形集合。</li>
+            <li>字符 字符是字母或符号的数字（二进制）表示。一个字符可能需要1个或多个字节来表示。当计算机渲染字符时，它将这些字符映射到字体中的字形。</li>
+        </ul>
+    </div>
+
+    <h1>定位文本</h1>
+
+    <div class="txt">
+        文本的位置由 &lt;text&gt; 元素的x和y属性确定。属性x确定了在哪里定位文本的左侧边缘（文本的开始）。属性y确定了在哪里定位文本的底部（而不是顶部）。因此，文本的y坐标和线段、长方形或其它图形的y坐标不一样。下面这个例子展示了y坐标都为40的文本和线段：
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <g style="font-size: 30px; fill: green;">
+            <text x="20" y="100">
+                <tspan>hello world</tspan>
+                <tspan dx="10" style="fill: red; font-size: 12px;">x: 20 y:100</tspan>
+            </text>
+            <text x="20" y="200">
+                <tspan>hello pdslly</tspan>
+                <tspan dx="10" style="fill: red; font-size: 12px;">x: 20 y:200</tspan>
+            </text>
+        </g>
+    </svg>
+
+    <h3>注意：文本的y位置是指文本的底部，而不是顶部。</h3>
+
+    <h1>文本锚点</h1>
+
+    <div class="txt">
+        <p>文本锚点决定了文本的那个部分位于text元素x属性指定的x位置。其默认为文本的左侧边缘。也就是文本的开头。当然，你也可以使用文本的中间或右侧边缘——文本的结尾作为锚点。</p>
+        <p>你可以通过改变CSS属性<mark>text-anchor</mark>设置文本的锚点。它有三个值：<b>start</b>，<b>middle</b>和<b>end</b>。</p>
+        <p>下面是一个展示text-anchor三个不同文本锚点选项的SVG图：</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <line x1="150" y1="0" x2="150" y2="300" style="stroke: #333;"></line>
+        <g style="fill: red; font-size: 16px; text-align: center;">
+            <text x="150" y="120" style="text-anchor: start;">Start</text>
+            <text x="150" y="150" style="text-anchor: middle;">Middle</text>
+            <text x="150" y="180" style="text-anchor: end;">End</text>
+        </g>
+    </svg>
+
+    <div class="txt">
+        <p>垂直线展示了三个文本的X位置。所有三个文本的x="150"。你可以看到三个文本如何以不同的方式定位锚点。</p>
+        <p>上述三个文本的SVG代码如下所示：</p>
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;line x1="150" y1="0" x2="150" y2="300" style="stroke: #333;"&gt;&lt;/line&gt;
+            &nbsp;&lt;g style="fill: red; font-size: 16px; text-align: center;"&gt;
+            &nbsp;&nbsp;&lt;text x="150" y="120" style="text-anchor: start;"&gt;Start&lt;/text&gt;
+            &nbsp;&nbsp;&lt;text x="150" y="150" style="text-anchor: middle;"&gt;Middle&lt;/text&gt;
+            &nbsp;&nbsp;&lt;text x="150" y="180" style="text-anchor: end;"&gt;End&lt;/text&gt;
+            &nbsp;&lt;/g&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <h1>文本描边和填充</h1>
+
+    <div class="txt">
+        <p>和其它图形一样，文本也可以设置描边和填充。如果你只指定描边，文本只会显示其轮廓。如果只指定填充，文本看起来像正常呈现。</p>
+        <p>下面是三个展示stroke和fill组合的例子：</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" style="border: 1px dotted red;">
+        <text x="20" y="100" style="stroke: red; fill: none; stroke-width: 1; font-size: 40px;">hello world</text>
+        <text x="20" y="150" style="stroke: none; fill: green; stroke-width: 1; font-size: 40px;">hello world</text>
+        <text x="20" y="200" style="stroke: green; fill: red; stroke-width: 1; font-size: 40px;">hello world</text>
+    </svg>
+
+    <h1>字母间距和字距</h1>
+
+    <div class="txt">
+        <p>使用样式属性letter-spacing和kerning可以控制字母间距和字距（字形间距）。</p>
+        <p>使用样式属性word-spacing可以控制单词间距</p>
+        <p>下面是两个简单的例子：</p>
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300px" height="300px" style="border: 1px dotted red;"&gt;
+            &nbsp;&lt;text x="20" y="90" style="font-size: 20px; fill: red;"&gt;hello world&lt;/text&gt;
+            &nbsp;&lt;text x="20" y="130" style="kerning: 6px; font-size: 20px; fill: red;"&gt;hello world&lt;/text&gt;
+            &nbsp;&lt;text x="20" y="170" style="word-spacing: 10px; font-size: 20px; fill: red;"&gt;hello world&lt;/text&gt;
+            &nbsp;&lt;text x="20" y="210" style="letter-spacing: 6px; font-size: 20px; fill: red;"&gt;hello world&lt;/text&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <p>结果图片如下：</p>
+
+    <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         width="300px" height="300px" style="border: 1px dotted red;">
+        <text x="20" y="90" style="font-size: 30px; fill: red;">hello world</text>
+        <text x="20" y="130" style="kerning: 6px; font-size: 30px; fill: red;">hello world</text>
+        <text x="20" y="170" style="word-spacing: 10px; font-size: 30px; fill: red;">hello world</text>
+        <text x="20" y="210" style="letter-spacing: 6px; font-size: 30px; fill: red;">hello world</text>
+    </svg>
+
+    <h1>文本布局-无自动换行</h1>
+
+    <div class="txt">
+        <p>SVG没有自动换行。你不得不自己定位文本并且换行。你可以从 &lt;tspan&gt; 元素的相对定位得到一些帮助</p>
+        <p>你也可以沿着路径不布置文本，例如沿着圆形或样条。使用 &lt;textpath&gt; 元素可以完成。</p>
+    </div>
+
+    <div class="txt">
+            <p>SVG没有自动换行。你不得不自己定位文本并且换行。你可以从 &lt;tspan&gt; 元素的相对定位得到一些帮助</p>
+            <p>你也可以沿着路径不布置文本，例如沿着圆形或样条。使用 &lt;textpath&gt; 元素可以完成。</p>
+        </div>
+
+        <div class="txt">
+                <p>SVG没有自动换行。你不得不自己定位文本并且换行。你可以从 &lt;tspan&gt; 元素的相对定位得到一些帮助</p>
+                <p>你也可以沿着路径不布置文本，例如沿着圆形或样条。使用 &lt;textpath&gt; 元素可以完成。</p>
+            </div>
+
+    <h1>旋转文本</h1>
+
+    <div class="txt">
+        可以像旋转其它SVG形状一样，旋转SVG文本。使用SVG 变换，旋转由transform属性实现，示例如下：
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         width="300px" height="300px" style="border: 1px dotted red;">
+        <text x="150" y="165" transform="rotate(45 150,165)" style="font-size: 40px; color: green; text-anchor: middle;">rotate(45 150,165)</text>
+    </svg>
+</center>
+</body>
+</html>
