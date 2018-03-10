@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<header class="header">SVG rect元素使用</header>
+<center>
+    <div class="txt">
+        &lt;p&gt;SVG&lt;tspan&gt;元素用来绘制多行文本。&lt;tspan&gt;元素可以相对前一行文本定位，而不是必须绝对定位每行文本。用户还可以使用&lt;tspan&gt;元素一次选择并复制粘贴多行文本，而不仅仅是一个text元素。&lt;/p&gt;
+    </div>
+
+    <h1>tspan示例</h1>
+
+    <p>下面是一个简单的&lt;tspan&gt;示例</p>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="210px" width="210px"&gt;
+            &nbsp;&lt;text y="100" style="font-size: 12px;"&gt;
+                &nbsp;&nbsp;&lt;tspan dy="0"&gt;TSPAN&lt;/tspan&gt;
+                &nbsp;&nbsp;&lt;tspan dy="20"&gt;TSPAN&lt;/tspan&gt;
+                &nbsp;&nbsp;&lt;tspan dy="20"&gt;TSPAN&lt;/tspan&gt;
+                &nbsp;&nbsp;&lt;tspan dy="-20"&gt;TSPAN&lt;/tspan&gt;
+                &nbsp;&nbsp;&lt;tspan dy="-20"&gt;TSPAN&lt;/tspan&gt;
+            &nbsp;&lt;/text&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <p>最终图片如下</p>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="210px" width="210px">
+        <text y="100" style="font-size: 12px;">
+            <tspan dy="0">TSPAN</tspan>
+            <tspan dy="20">TSPAN</tspan>
+            <tspan dy="20">TSPAN</tspan>
+            <tspan dy="-20">TSPAN</tspan>
+            <tspan dy="-20">TSPAN</tspan>
+        </text>
+    </svg>
+
+    <h1>垂直定位</h1>
+
+    <div class="txt">
+        <p>如果想让文本相对垂直定位，你可以使用dy属性（增量y）</p>
+    </div>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px"&gt;
+            &nbsp;&lt;text x="100" y="125" style="font-size: 20px;"&gt;
+                &nbsp;&nbsp;&lt;tspan&gt;LEFT&lt;/tspan&gt;
+                &nbsp;&nbsp;&lt;tspan dy="30"&gt;RIGHT&lt;/tspan&gt;
+            &nbsp;&lt;/text&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <div>
+        <p>效果如下</p>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px">
+        <text x="100" y="125" style="font-size: 20px;">
+            <tspan>LEFT</tspan>
+            <tspan dy="30">RIGHT</tspan>
+        </text>
+    </svg>
+
+    <div class="txt">
+        <p>如果想让&lt;tspan&gt;元素以一个绝对的y坐标定位，你可以像&lt;text&gt;元素一样使用y属性。</p>
+        <p>如果你在dy属性中写多个数值，每个数值将会应用到&lt;tspan&gt;元素文本的多个字符上。</p>
+    </div>
+
+    <p>示例代码如下</p>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px"&gt;
+            &nbsp;&lt;text x="120" y="120" style="font-size: 20px;"&gt;
+                &nbsp;&nbsp;&lt;tspan dy="0 30 30"&gt;123&lt;/tspan&gt;
+            &nbsp;&lt;/text&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <p>代码效果如下</p>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px">
+        <text x="120" y="120" style="font-size: 20px;">
+            <tspan dy="0 30 30">123</tspan>
+        </text>
+    </svg>
+
+    <h1>水平定位</h1>
+
+    <div>
+        <p>你可以使用dx属性（增量x）在x轴上将文本相对定位。</p>
+        <b>具体用法与垂直定位相同</b>
+    </div>
+
+    <h1>为tspan元素添加样式</h1>
+
+    <p>示例代码如下</p>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px"&gt;
+            &nbsp;&lt;text x="30" y="140" style="font-size: 20px;"&gt;
+                &nbsp;&nbsp;this is a &lt;tspan style="font-weight: bold;"&gt;bold&lt;/tspan&gt; word!
+            &nbsp;&lt;/text&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <p>代码效果如下</p>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px">
+        <text x="30" y="140" style="font-size: 20px;">
+            this is a <tspan style="font-weight: bold;">bold</tspan> word!
+        </text>
+    </svg>
+
+    <h1>带基线偏移的上标和下标</h1>
+
+    <div class="txt">
+        你可以&lt;tspan&gt;元素的CSS属性baseline-shift创建上标和下标。下面的SVGbaseline-shift例子展示了实现方式
+    </div>
+
+    <p>示例代码如下</p>
+
+    <pre>
+        &lt;svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="500px"&gt;
+            &nbsp;&lt;text x="30" y="143" style="font-size: 14px;"&gt;
+                &nbsp;&nbsp;this is a text with &lt;tspan style="baseline-shift: super;"&gt;superscript&lt;/tspan&gt; and &lt;tspan style="baseline-shift: sub;"&gt;subscript&lt;/tspan&gt; mixed with normal text
+            &nbsp;&lt;/text&gt;
+        &lt;/svg&gt;
+    </pre>
+
+    <p>代码效果如下</p>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="border: 1px red dotted;" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="500px">
+        <text x="30" y="143" style="font-size: 14px;">
+            this is a text with <tspan style="baseline-shift: super;">superscript</tspan> and <tspan style="baseline-shift: sub;">subscript</tspan> mixed with normal text
+        </text>
+    </svg>
+</center>
+</body>
+</html>
